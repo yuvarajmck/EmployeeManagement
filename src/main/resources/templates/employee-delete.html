@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee-Delete</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+
+<body>
+<!--Navigation bar-->
+
+<!--<nav>-->
+<!--    <ul  class="nav-bar">-->
+<!--        <li id="brand" >Go-Tech</li>-->
+<!--        <li><a th:href="@{/employee}" id="home">Home</a></li>-->
+<!--        <li><a th:href="@{/about}" id="about">About</a></li>-->
+<!--        <li><a th:href="@{/employee/addEmployee}" id="add" >Add Employee</a></li>-->
+<!--        <li><a id="signout" th:href="@{/logout}">Sign Out</a></li>-->
+<!--    </ul>-->
+
+<!--</nav>-->
+
+
+<!--Navigation bar-->
+<div th:object="${employee}" class="del">
+    You are about to delete an employee, <br> Are you sure?<br>
+    <a th:href="@{/employee/{employeeId}/confirm/delete(employeeId=${employee.id})}">
+        <button class="btn btn-danger" type="submit">Delete</button>
+    </a>
+    <a th:href="@{/employeelist}">
+        <button class="btn-primary" type="submit">Go Back</button>
+    </a>
+</div>
+
+</body>
+</html>

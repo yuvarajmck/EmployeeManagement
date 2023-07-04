@@ -1,0 +1,157 @@
+*{
+    margin: 0px;
+    border: 0px;
+}
+
+.nav-bar{
+    border: none;
+    background-color:black;
+    color: honeydew;
+    padding: 20px;
+    display: flex;
+    float: left;
+}
+
+#about{
+    margin-left: 50px;
+    color: honeydew;
+}
+
+#home{
+    margin-left: 902px;
+    color: honeydew;
+}
+
+#add{
+    margin-left: 50px;
+    color: honeydew;
+}
+#signout{
+    margin-left: 50px;
+    color: honeydew;
+}
+
+li{
+    list-style: none;
+}
+#brand{
+    font-family: monospace;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+a{
+    text-decoration: none;
+    text-underline: none;
+
+}
+
+.container{
+    margin-left: 300px;
+    padding: 20px;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+}
+
+.btn{
+    border: rgb(121, 82, 179) 1px solid;
+    padding: 20px;
+    color: black;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+.flex{
+    display: flex;
+    float: left;
+}
+td{
+    border: black 1px solid;
+    padding: 20px;
+    color: black;
+}
+.btn:hover{
+    background-color: darkgray;
+    box-shadow: black;
+}
+h2{
+    margin-left: 550px;
+}
+h3{
+    margin-left: 100px;
+}
+
+.btn:active{
+    background-color: gray;
+    box-shadow: black;
+}
+h1{
+    margin-left: 300px;
+}
+.table-tabs{
+    border: none;
+    margin-left: 550px;
+}
+
+.box{
+    margin-top: 200px;
+    margin-left: 150px;
+    border: 0px solid;
+    width: 400px;
+    padding: 50px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+form{
+    margin-top: 200px;
+    margin-left: 150px;
+    border: 0px solid;
+    width: 400px;
+    padding: 50px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+input{
+    margin: 20px;
+    align-items: center;
+    border: black 1px solid;
+}
+
+.btn-danger{
+    background-color: red;
+}
+.btn-danger:hover{
+    background-color: #d73c3c;
+}
+.btn-danger:active{
+    background-color: #601010;
+}
+
+.btn-primary{
+    background-color: lawngreen;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+
+}
+
+.text-danger{
+    color: #d73c3c;
+}
+
+.del{
+    margin-top: 200px;
+    margin-left: 500px;
+    border: 0px solid;
+    width: 400px;
+    padding: 50px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+button{
+    cursor: pointer;
+    margin: 5px;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Add-Employee</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+
+<!--Navigation bar-->
+
+<nav>
+    <ul  class="nav-bar">
+        <li id="brand" >Go-Tech</li>
+        <li><a th:href="@{/employee}" id="home">Home</a></li>
+        <li><a th:href="@{/about}" id="about">About</a></li>
+        <li><a th:href="@{/employee/addEmployee}" id="add" >Add Employee</a></li>
+        <li><a id="signout" th:href="@{/logout}">Sign Out</a></li>
+    </ul>
+
+</nav>
+
+
+<!--Navigation bar-->
+
+<!--form-->
+
+<section class="container">
+
+
+    <form method="post" th:action="@{/employee/new}" th:object="${employee}">
+        <label for="name">Name</label>
+        <input type="text"
+               name="name"
+               th:field="*{name}"
+               id="name"
+               placeholder="Title">
+        <p th:if="${#fields.hasErrors('name')}" class="text-danger" th:errors="*{name}"></p>
+        <br>
+        <label for="PhotoUrl">PhotoUrl</label>
+        <input type="text"
+               id="PhotoUrl"
+               th:field="*{photoUrl}"
+               name="PhotoUrl"
+               placeholder="PhotoUrl">
+        <p th:if="${#fields.hasErrors('photoUrl')}" class="text-danger" th:errors="*{photoUrl}"></p>
+        <br>
+        <label for="email">Email</label>
+        <input type="email"
+               class="form-control"
+               th:field="*{email}"
+               id="email"
+               placeholder="name@example.com">
+        <p th:if="${#fields.hasErrors('email')}" class="text-danger" th:errors="*{email}"></p>
+        <br>
+        <label for="department">Department</label>
+        <input type="text"
+               th:field="*{department}"
+               id="department"
+               placeholder="It || QA">
+        <p th:if="${#fields.hasErrors('department')}" class="text-danger" th:errors="*{department}"></p>
+        <br>
+        <label for="mobile">Mobile No </label>
+        <input type="text"
+               th:field="*{mobileNo}"
+               id="mobile"
+               placeholder="9876543210">
+        <p th:if="${#fields.hasErrors('mobileNo')}" class="text-danger" th:errors="*{mobileNo}"></p>
+        <br>
+        <label for="joindate">Joining Date</label>
+        <input type="date"
+               th:field="*{joiningDate}"
+               id="joindate"
+               placeholder="Joining Date">
+
+        <br>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+
+</section>
+
+<!--form-->
+
+
+</body>
+</html>

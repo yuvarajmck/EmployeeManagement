@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee-Details</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+
+<!--Navigation bar-->
+
+<nav>
+    <ul  class="nav-bar">
+        <li id="brand" >Go-Tech</li>
+        <li><a th:href="@{/employeelist}" id="home">Home</a></li>
+        <li><a th:href="@{/about}" id="about">About</a></li>
+        <li><a th:href="@{/employeelist}" id="add" >Employee List</a></li>
+        <li><a id="signout" th:href="@{/logout}">Sign Out</a></li>
+    </ul>
+</nav>
+
+<br><br><br><br>
+<br><br><br><br>
+
+<!--Navigation bar-->
+
+<h2><img th:src="${employee.photoUrl}" alt=".../"></h2>
+<center class="container">
+        <div>
+            <table>
+
+                <br><br>
+                <tr>
+                    <td class="table-tabs"><h3>Name : </h3></td>
+                    <td class="table-tabs"><h3 th:text="${employee.name}"></h3></td>
+                    </tr>
+                <tr>
+                    <td class="table-tabs"><h3>Email : </h3></td>
+                    <td class="table-tabs"><h3 th:text="${employee.email}"></h3></td>
+                </tr>
+                <tr>
+                    <td class="table-tabs"><h3>Department : </h3></td>
+                    <td class="table-tabs"><h3 th:text="${employee.department}"></h3></td>
+                </tr>
+                <tr>
+                    <td class="table-tabs"><h3>Mobile No : </h3></td>
+                    <td class="table-tabs"><h3 th:text="${employee.mobileNo}"></h3></td>
+                </tr>
+                <tr>
+                    <td class="table-tabs"><h3>Joining Date : </h3></td>
+                    <td class="table-tabs"><h3 th:text="${employee.joiningDate}"></h3></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+
+</center>
+
+</body>
+</html>
