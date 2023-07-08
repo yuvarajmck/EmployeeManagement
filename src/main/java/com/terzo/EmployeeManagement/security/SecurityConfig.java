@@ -19,10 +19,7 @@ import java.util.List;
 
 @Configuration
 public class SecurityConfig {
-//    @Bean
-//    public PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
+
 
     private final UserRepository userRepository;
 
@@ -31,28 +28,13 @@ public class SecurityConfig {
         this.userRepository = userRepository;
     }
 
-    @Bean
-    public InMemoryUserDetailsManager userDetailsManager() {
-        List<UserEntity> users = userRepository.findAll();
-        InMemoryUserDetailsManager auth = new InMemoryUserDetailsManager();
-        System.out.println(users);
-        for (UserEntity user : users) {
-            UserDetails daniel = User.builder()
-                    .username(user.getUsername())
-                    .password("{noop}" + user.getPassword())
-                    .roles(user.getRole())
-                    .build();
-            auth.createUser(daniel);
-        }
-        return auth;
-    }
-//    @Bean
-//    public UserDetailsService userDetailsService(DataSource dataSource) {
-//        JdbcUserDetailsManager userDetailsManager = new JdbcUserDetailsManager(dataSource);
-//        userDetailsManager.setUsersByUsernameQuery("SELECT username, password, active FROM user_entity WHERE username = ?");
-//        userDetailsManager.setAuthoritiesByUsernameQuery("SELECT username, role FROM user_entity WHERE username = ?");
-//        return userDetailsManager;
-//    }
+   @Bean
+   public UserDetailsService userDetailsService(DataSource dataSource) {
+       JdbcUserDetailsManager userDetailsManager = new JdbcUserDetailsManager(dataSource);
+       userDetailsManager.setUsersByUsernameQuery("SELECT username, password, active FROM user_entity WHERE username = ?");
+       userDetailsManager.setAuthoritiesByUsernameQuery("SELECT username, role FROM user_entity WHERE username = ?");
+       return userDetailsManager;
+   }
 
 
     @Bean
