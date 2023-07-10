@@ -41,18 +41,18 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.authorizeHttpRequests(configurer ->
                 configurer
-                        .requestMatchers(HttpMethod.GET, "/api/**").hasRole("EMPLOYEE")
-                        .requestMatchers(HttpMethod.GET, "/api/**").hasRole("MANAGER")
-                        .requestMatchers(HttpMethod.POST, "/api/employee/new").hasRole("MANAGER")
-                        .requestMatchers(HttpMethod.PUT, "/api/employee/**").hasRole("MANAGER")
-                        .requestMatchers(HttpMethod.DELETE, "/api/**").hasRole("MANAGER")
-                        .requestMatchers(HttpMethod.DELETE, "/api/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET, "/auth/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET, "/api/employees").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.POST, "/auth/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/auth/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/api/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.POST, "/api/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/api/**").hasAuthority("EMPLOYEE")
+                        .requestMatchers(HttpMethod.GET, "/api/**").hasAuthority("MANAGER")
+                        .requestMatchers(HttpMethod.POST, "/api/employee/new").hasAuthority("MANAGER")
+                        .requestMatchers(HttpMethod.PUT, "/api/employee/**").hasAuthority("MANAGER")
+                        .requestMatchers(HttpMethod.DELETE, "/api/**").hasAuthority("MANAGER")
+                        .requestMatchers(HttpMethod.DELETE, "/api/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/auth/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/api/employees").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/auth/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/auth/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/api/**").hasAuthority("ADMIN")
         );
         http.httpBasic(Customizer.withDefaults());
         http.csrf(AbstractHttpConfigurer::disable);
